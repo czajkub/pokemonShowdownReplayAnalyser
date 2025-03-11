@@ -15,14 +15,44 @@
 <body>
     <nav class="navbar">
         <ul class="navbar-nav-ul">
-            <li class="navbar-nav"><a class="navbar-brand">Pokémon Showdown Replay Analyser</a></li>
+            <li class="navbar-nav"><a class="navbar-brand" id="firstnavobject">Pokémon Showdown Replay Analyser</a></li>
             <li class="navbar-nav"><a class="navbar-brand">About me</a></li>
             <li class="navbar-nav"><a class="navbar-brand">Contact</a></li>
         </ul>
 
     </nav>
     <div class="underbody">
-
+        <div class="instructions">
+            <h1>How to submit a replay?</h1>
+            <ul>
+                <li><a>Select a Pokémon Showdown replay file (format: Gen9Draft-2025-03-10-kubercik-kacperol95.html)</a></li>
+                <li class="ignoredot"><a>-- OR --</a></li>
+                <li><a>Link a Pokémon Showdown log (format: https://replay.pokemonshowdown.com/gen9draft-2316738713.log)</a></li>
+                <li class="ignoredot"><a>-- OR --</a></li>
+                <li><a>Copy and paste the contents of a Pokémon Showdown log</a></li>
+                <li class="ignoredot"><a>-- THEN --</a></li>
+                <li><a>Press analyse</a></li>
+            </ul>
+        </div>
+        <div id="submitfile" class="userinput">
+            <form>
+                <!--<label for="logfile" id="logfilelabel"><a>Select log:</a></label>-->
+                <a id="logfilelabel" class="alabel">Select log:</a>
+                <input type="file" id="logfile" name="logfile" accept=".log,.html">
+            </form>
+        </div>
+        <div id="linklog" class="userinput">
+            <form>
+                <a id="linkloglabel" class="alabel">Paste the replay URL:</a>
+                <input type="url" id="linkurl" name="linkurl" placeholder="https://replay.pokemonshowdown.com/gen9draft-2316738713.log">
+            </form>
+        </div>
+        <div id="pastelog" class="userinput">
+            <a id="copypastelabel" class="alabel">Paste the replay log:</a>
+            <form>
+                <textarea id="copypaste" name="copypaste" rows="30" cols="60">Paste the replay log here</textarea>
+            </form>
+        </div>
     </div>
 </body>
 </html>
