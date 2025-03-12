@@ -6,6 +6,7 @@
     <meta name="author" content="czajkub">
     <meta name="description" content="Pokemon Showdown Replay Analyser">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="parser.js"></script>
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,23 +35,27 @@
                 <li><a>Press analyse</a></li>
             </ul>
         </div>
-        <div id="submitfile" class="userinput">
-            <form>
+        <div id="fileinput" class="userinput">
+            <form method="post">
                 <!--<label for="logfile" id="logfilelabel"><a>Select log:</a></label>-->
                 <a id="logfilelabel" class="alabel">Select log:</a>
                 <input type="file" id="logfile" name="logfile" accept=".log,.html">
+                <input type="submit" id="submitfile" value="Submit" class="submitbutton">
             </form>
         </div>
         <div id="linklog" class="userinput">
-            <form>
+            <form method="post">
                 <a id="linkloglabel" class="alabel">Paste the replay URL:</a>
                 <input type="url" id="linkurl" name="linkurl" placeholder="https://replay.pokemonshowdown.com/gen9draft-2316738713.log">
+                <input type="submit" id="submiturl" value="Submit" class="submitbutton">
             </form>
         </div>
         <div id="pastelog" class="userinput">
-            <a id="copypastelabel" class="alabel">Paste the replay log:</a>
-            <form>
-                <textarea id="copypaste" name="copypaste" rows="30" cols="60">Paste the replay log here</textarea>
+
+            <form method="post">
+                <a id="copypastelabel" class="alabel">Paste the replay log:</a>
+                <input type="submit" id="submitpaste" value="Submit" class="submitbutton">
+                <textarea id="copypaste" name="copypaste" rows="20" cols="40">Paste the replay log here</textarea>
             </form>
         </div>
     </div>
