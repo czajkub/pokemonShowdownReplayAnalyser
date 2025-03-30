@@ -101,3 +101,41 @@ body {
     text-shadow: 2px 2px 2px #4e1f8c;
     border: 2px solid black;
 }
+#submitpaste {
+}
+
+.output {
+    width: 50%;
+    border-top: 4px solid black;
+    padding-left: 3%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.rightcell {
+    padding-right: 5%;
+}
+
+.teamtable {
+    box-sizing: border-box;
+}
+.teambody {
+    vertical-align: bottom;
+    border: 2px solid aqua;
+}
+.player1 {
+    float: left;
+    width: auto;
+    padding: 5px;
+}
+.player2 {
+    float: left;
+    width: auto;
+    padding: 5px;
+}
+.teambody::after {
+    content: "";
+    clear: both;
+    display: table;
+}

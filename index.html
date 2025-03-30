@@ -7,9 +7,10 @@
     <meta name="description" content="Pokemon Showdown Replay Analyser">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <script src="js/parser.js"></script>
     <!-- jQuery 3.7.1 library -->
     <script src="js/jquery-3.7.1.js"></script>
+
+    <script src="js/parser.js"></script>
 
     <link rel="stylesheet" href="index.css">
     <!-- JetBrains Mono font -->
@@ -38,7 +39,7 @@
                 <li class="ignoredot"><a>-- OR --</a></li>
                 <li><a>Copy and paste the contents of a Pokémon Showdown log</a></li>
                 <li class="ignoredot"><a>-- THEN --</a></li>
-                <li><a>Press analyse</a></li>
+                <li><a>Press submit</a></li>
             </ul>
         </div>
         <div id="fileinput" class="userinput">
@@ -60,17 +61,54 @@
 
             <form method="post">
                 <a id="copypastelabel" class="alabel">Paste the replay log:</a>
-                <input type="submit" id="submitpaste" value="Submit" class="submitbutton">
+                <button type="button" id="submitpaste" class="submitbutton">Submit</button>
                 <textarea id="copypaste" name="copypaste" rows="20" cols="40">Paste the replay log here</textarea>
             </form>
+        </div>
+        <div id="teamoutput" class="output">
+            <table class="teamtable">
+                <caption id="p1caption">(p1)'s team</caption>
+                <tbody class="teambody">
+                    <tr>
+                        <td class="player1">Pokemon1</td>
+                        <td class="player1">Pokemon2</td>
+                        <td class="player1">Pokemon3</td>
+                    </tr>
+                    <tr>
+                        <td class="player1">Pokemon4</td>
+                        <td class="player1">Pokemon5</td>
+                        <td class="player1">Pokemon6</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="teamtable">
+                <caption id="p2caption">(p2)'s team</caption>
+                <tbody class="teambody">
+                <tr>
+                    <td class="player2">Pokemon1</td>
+                    <td class="player2">Pokemon2</td>
+                    <td class="player2">Pokemon3</td>
+                </tr>
+                <tr>
+                    <td class="player2">Pokemon4</td>
+                    <td class="player2">Pokemon5</td>
+                    <td class="player2">Pokemon6</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </body>
 <script>
+    // $(document).ready(function() {
+    //     $("#copypaste").load("gen9draft-2316738713.log.txt");
+    // })
     $("#submitpaste").click(function () {
-        var text = $('#copypaste').val();
+        const text = $("#copypaste").val();
+        $("#copypaste").html("skibidi5");
         if (text) {
-            var parser = new parser();
+            parser(text);
+            $("#copypaste").html("skibidi1");
         }
     })
 </script>
