@@ -1,3 +1,7 @@
+$.getScript("js/displayTeam.js", function() {
+    alert("Script loaded but not necessarily executed.");
+});
+
 
 function parser(log) {
     this.log = log;
@@ -42,14 +46,7 @@ function parser(log) {
     }
     console.log(this.players);
     console.log(this.players.length);
-    if(this.players.length !== 2) {
-        // TODO: return some error
-        console.log("No players found.");
-    }
-    else {
-        $("p1caption").html(this.players[0].name);
-        $("p2caption").html(this.players[1].name);
-    }
+    displayTeam(this.players);
 }
 class Pokemon {
     constructor(name, gender) {
@@ -69,5 +66,21 @@ class Player {
     }
     setMonAmount(monamount) {
         this.monamount = monamount;
+    }
+}
+
+function displayTeam(players) {
+    if(players.length !== 2) {
+        // TODO: return some error
+        console.log("No players found.");
+        return;
+    }
+    $("#p1caption").text(players[0].name + "'s team");
+    $("#p2caption").text(players[1].name + "'s team");
+    for(var i = 0; i < players[0].monamount; i++) {
+        $("#p1p"+String(i+1)).text(players[0].mons[i].name);
+    }
+    for(var i = 0; i < players[1].monamount; i++) {
+        $("#p2p"+String(i+1)).text(players[1].mons[i].name);
     }
 }
